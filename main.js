@@ -13,94 +13,219 @@
   var CATEGORIES = [
     { id: "chemicals", name: "Foundry Chemicals & Fluxes" },
     { id: "rcs", name: "Resin Coated Sand" },
-    { id: "furnace", name: "Furnace & Lining Materials" },
-    { id: "abrasives", name: "Abrasives & Industrial Materials" }
+    { id: "furnace", name: "Furnace & Lining Materials" }
   ];
 
   var PRODUCTS = [
     {
       id: "degasser", cat: "chemicals", name: "De-Gasser",
-      lede: "A specialised flux used for the removal of dissolved gases from molten metal during melting and holding.",
-      applications: ["Ferrous casting", "Non-ferrous casting", "Metal refining"],
-      benefits: ["Helps reduce dissolved gas content in molten metal", "Supports cleaner metal for casting operations"]
+      lede: "A handy degassing method — a perfectly compressed tablet of chemical powder that releases gas bubbles through molten metal.",
+      applications: ["Non-ferrous casting", "Ferrous casting", "Metal refining"],
+      benefits: ["Releases chlorine / C2Cl4 gas for degassing", "Removes non-metallic inclusions and refines the metal"]
     },
     {
       id: "grain-refiner", cat: "chemicals", name: "Grain Refiner",
-      lede: "A flux formulation used to refine the grain structure of cast metal for improved casting characteristics.",
-      applications: ["Non-ferrous casting", "Aluminium casting", "Metal refining"],
-      benefits: ["Supports refined grain structure", "Improves casting consistency"]
+      lede: "Salt-base compacted tablets — titanium, or titanium & boron — added to the melt to promote fine, equiaxial grain growth during solidification.",
+      applications: ["Non-ferrous casting", "Aluminium casting"],
+      benefits: ["Combination of titanium & boron as proven grain nuclei", "Supports homogeneous distribution of silicon grains"]
     },
     {
-      id: "cover-flux", cat: "chemicals", name: "Cover Flux",
-      lede: "A protective flux applied as a cover over molten metal to minimise oxidation and gas pickup.",
-      applications: ["Furnace operations", "Holding furnaces", "Non-ferrous casting"],
-      benefits: ["Reduces surface oxidation", "Helps limit gas pickup during holding"]
+      id: "cover-flux", cat: "chemicals", name: "Cover Fluxes & Modifiers",
+      lede: "A range of powder fluxes required in aluminium melting for covering, protecting, reducing melting loss, refining and cleaning the molten metal.",
+      applications: ["Aluminium melting", "Holding furnaces"],
+      benefits: ["Reduces melting loss", "Refines and cleans molten metal"]
     },
     {
       id: "mgr-tablet", cat: "chemicals", name: "M.G.R. Tablet",
-      lede: "Tablet-form metal treatment flux for foundry application requirements.",
-      applications: ["Metal refining", "Foundry moulding operations"],
-      benefits: ["Convenient measured dosing", "Consistent treatment performance"]
+      lede: "Tablet meant for lowering the presence of magnesium in molten aluminium — up to 1 kg, plunged into the furnace at an appropriate temperature.",
+      applications: ["Aluminium casting", "Furnace operations"],
+      benefits: ["Lowers magnesium in molten aluminium", "Tablet form up to 1 kg"]
     },
     {
       id: "foundry-fluxes", cat: "chemicals", name: "Foundry Fluxes",
-      lede: "A comprehensive line of fluxes formulated for foundry melting, holding and casting operations.",
-      applications: ["Ferrous casting", "Non-ferrous casting", "Foundry moulding", "Core manufacturing"],
-      benefits: ["Broad application coverage", "Backed by decades of foundry experience"]
+      lede: "High-grade & low-cost reducing fluxes, oxidation fluxes, covering fluxes and related foundry chemicals.",
+      applications: ["Ferrous casting", "Non-ferrous casting", "Metal treatment"],
+      benefits: ["High-grade & low-cost options", "Broad foundry application coverage"]
     },
     {
       id: "reducing-fluxes", cat: "chemicals", name: "Reducing Fluxes",
-      lede: "Fluxes designed to create reducing conditions during molten metal treatment.",
-      applications: ["Metal refining", "Ferrous casting"],
-      benefits: ["Supports controlled metal treatment", "Assists in removal of non-metallic inclusions"]
+      lede: "High-grade & low-cost reducing fluxes for foundry metal treatment.",
+      applications: ["Foundry metal treatment"],
+      benefits: ["High-grade & low-cost options"]
     },
     {
       id: "oxidation-fluxes", cat: "chemicals", name: "Oxidation Fluxes",
-      lede: "Fluxes formulated for oxidation-based molten metal treatment processes.",
-      applications: ["Metal refining", "Non-ferrous casting"],
-      benefits: ["Facilitates specific treatment reactions", "Technical support available"]
+      lede: "Oxidation fluxes for foundry metal treatment applications.",
+      applications: ["Foundry metal treatment"],
+      benefits: ["Foundry-grade oxidation fluxes"]
     },
     {
       id: "resin-coated-sand", cat: "rcs", name: "Resin Coated Sand",
-      lede: "Specialised resin-coated sand manufactured for shell moulding and core-making applications.",
+      lede: "High-grade silica sand coated with phenol-formaldehyde resin and catalyst for shell moulding and core-making.",
       applications: ["Shell moulding", "Core manufacturing", "Foundry moulding"],
-      benefits: ["Consistent coating quality", "Engineered for mould and core applications", "Supported by application expertise"]
+      benefits: ["Smooth, free-flowing and dry — resistant to moisture", "Superb hot strength", "Supported by application expertise"]
     },
     {
       id: "silica-lining", cat: "furnace", name: "Silica Lining Materials",
-      lede: "Silica-based lining materials for furnace and induction furnace applications.",
-      applications: ["Induction furnace operations", "Furnace maintenance"],
-      benefits: ["Silica-based construction", "Supported by technical guidance"]
+      lede: "Silica lining materials for induction furnaces.",
+      applications: ["Induction furnaces"],
+      benefits: ["For induction furnace lining"]
     },
     {
       id: "magnesite-lining", cat: "furnace", name: "Magnesite Lining Materials",
-      lede: "Magnesite-based lining materials for furnace applications.",
-      applications: ["Furnace operations", "Induction furnace operations"],
-      benefits: ["Magnesite-based construction", "Technical support available"]
+      lede: "Magnesite lining materials for induction furnaces.",
+      applications: ["Induction furnaces"],
+      benefits: ["For induction furnace lining"]
     },
     {
       id: "heat-treatment-salts", cat: "furnace", name: "Heat Treatment Salts",
-      lede: "Salt products used in heat treatment processes across industrial applications.",
-      applications: ["Heat treatment processes", "Metal processing"],
-      benefits: ["Range of heat treatment salt products", "Application guidance available"]
+      lede: "Heat treatment salts for industrial applications.",
+      applications: ["Heat treatment"],
+      benefits: ["Heat treatment salts"]
     },
     {
       id: "carbon-products", cat: "furnace", name: "Carbon Products",
-      lede: "Carbon-based products for foundry and metallurgical applications.",
-      applications: ["Foundry processes", "Metal treatment"],
-      benefits: ["Carbon-based material range", "Technical support available"]
+      lede: "Carbon products for foundry and industrial applications.",
+      applications: ["Foundry applications"],
+      benefits: ["Carbon products"]
     },
     {
-      id: "abrasives-grains", cat: "abrasives", name: "Abrasives & Grains",
-      lede: "Abrasives, grains and other specialised industrial materials for processing applications.",
-      applications: ["Surface processing", "Industrial material applications"],
-      benefits: ["Industrial-grade material range", "Consultation on requirements"]
+      id: "dycotes", cat: "chemicals", name: "Dycotes",
+      lede: "Dycotes available in oil base, alcohol base and synthetic water base.",
+      applications: ["Foundry coating applications"],
+      benefits: ["Oil / alcohol / synthetic water base options"]
     },
     {
-      id: "industrial-materials", cat: "abrasives", name: "Industrial Materials",
-      lede: "Specialised industrial materials supplied to meet specific processing and manufacturing requirements.",
-      applications: ["Industrial processing", "Specialised requirements"],
-      benefits: ["Custom requirement consultation", "Reliable supply"]
+      id: "aluminium-paste", cat: "chemicals", name: "Aluminium Paste",
+      lede: "Aluminium paste in the Tirupati Metachems foundry range.",
+      applications: ["Foundry applications"],
+      benefits: ["Aluminium paste"]
+    },
+    {
+      id: "graphite-products", cat: "chemicals", name: "Graphite Plates & Graphite Powder",
+      lede: "Graphite plates for extrusion plants and graphite powder for foundries.",
+      applications: ["Extrusion plants", "Foundries"],
+      benefits: ["Plates and powder forms"]
+    },
+    {
+      id: "lubix", cat: "chemicals", name: "Lubix",
+      lede: "Lubix — a specialised product in the Tirupati Metachems foundry range.",
+      applications: ["Foundry applications"],
+      benefits: ["Foundry-grade product"]
+    },
+    {
+      id: "ceramic-powder", cat: "chemicals", name: "Ceramic Powder",
+      lede: "Ceramic powder in the Tirupati Metachems foundry range.",
+      applications: ["Foundry applications"],
+      benefits: ["Foundry-grade product"]
+    },
+    {
+      id: "slag-cure", cat: "chemicals", name: "Slag Cure",
+      lede: "Slag Cure — a slag co-agulating compound.",
+      applications: ["Ferrous casting", "Foundry operations"],
+      benefits: ["Slag co-agulating compound"]
+    },
+    {
+      id: "mould-coatings", cat: "chemicals", name: "Mould Coatings",
+      lede: "Mould coatings in the Tirupati Metachems foundry range.",
+      applications: ["Foundry moulding"],
+      benefits: ["Foundry-grade coatings"]
+    },
+    {
+      id: "coil-cote", cat: "chemicals", name: "Coil Cote & Colloendum",
+      lede: "Coil Cote & Colloendum — products in the Tirupati Metachems foundry range.",
+      applications: ["Foundry applications"],
+      benefits: ["Foundry-grade products"]
+    },
+    {
+      id: "al-nium", cat: "chemicals", name: "Al-Nium",
+      lede: "Al-Nium — used for slag treatment and diffusion of gases.",
+      applications: ["Slag treatment", "Metal treatment"],
+      benefits: ["Slag treatment and diffusion of gases"]
+    },
+    {
+      id: "core-fix", cat: "chemicals", name: "Core Fix & Sealing Compounds",
+      lede: "Core Fix & Sealing Compounds in the Tirupati Metachems foundry range.",
+      applications: ["Core manufacturing", "Foundry moulding"],
+      benefits: ["Core fixing and sealing compounds"]
+    },
+    {
+      id: "core-washes", cat: "chemicals", name: "Core Washes",
+      lede: "Core washes in the Tirupati Metachems foundry range.",
+      applications: ["Core manufacturing", "Foundry moulding"],
+      benefits: ["Foundry-grade core washes"]
+    },
+    {
+      id: "ennocullins", cat: "chemicals", name: "Ennocullins",
+      lede: "Ennocullins — a product in the Tirupati Metachems foundry range.",
+      applications: ["Foundry applications"],
+      benefits: ["Foundry-grade product"]
+    },
+    {
+      id: "synthetic-slag", cat: "chemicals", name: "Synthetic Slag Materials",
+      lede: "Synthetic slag materials in the Tirupati Metachems foundry range.",
+      applications: ["Metal treatment", "Foundry operations"],
+      benefits: ["Synthetic slag materials"]
+    },
+    {
+      id: "ref-cotes", cat: "chemicals", name: "Ref-Cotes",
+      lede: "Ref-Cotes — refractory coating products in the Tirupati Metachems range.",
+      applications: ["Foundry applications", "Furnace applications"],
+      benefits: ["Refractory coating products"]
+    },
+    {
+      id: "refining-cote-zircon", cat: "chemicals", name: "Refining Cote Zircon",
+      lede: "Refining Cote Zircon — available in water base, thinner base grade and special grade.",
+      applications: ["Metal refining", "Foundry applications"],
+      benefits: ["Water base / thinner base / special grade options"]
+    },
+    {
+      id: "filter-clothes", cat: "chemicals", name: "Filter Clothes (Aluminium)",
+      lede: "Filter clothes for aluminium foundry applications.",
+      applications: ["Aluminium casting"],
+      benefits: ["Aluminium filter clothes"]
+    },
+    {
+      id: "slug-30", cat: "chemicals", name: "Slug 30 (Perlite Turkey)",
+      lede: "Slug 30 — Perlite (Turkey) foundry material.",
+      applications: ["Foundry applications"],
+      benefits: ["Perlite (Turkey) material"]
+    },
+    {
+      id: "graphite-powder", cat: "chemicals", name: "Graphite Powder",
+      lede: "Graphite powder available in 50–60% and 80–85% grades.",
+      applications: ["Foundry applications"],
+      benefits: ["50–60% / 80–85% grades"]
+    },
+    {
+      id: "magnesite-graphite", cat: "chemicals", name: "Magnesite Graphite Coatings",
+      lede: "Coatings of magnesite graphite — thinner base and water base available.",
+      applications: ["Foundry applications", "Coating applications"],
+      benefits: ["Thinner & water base options"]
+    },
+    {
+      id: "flourspar", cat: "chemicals", name: "Flourspar Powder",
+      lede: "Flourspar powder of all grades.",
+      applications: ["Foundry applications"],
+      benefits: ["All grades available"]
+    },
+    {
+      id: "cryolite", cat: "chemicals", name: "Synthetic Cryolite Powder",
+      lede: "Synthetic cryolite powder in the Tirupati Metachems range.",
+      applications: ["Foundry applications"],
+      benefits: ["Synthetic cryolite powder"]
+    },
+    {
+      id: "sodium-silico-fluoride", cat: "chemicals", name: "Sodium Silico Fluoride",
+      lede: "Sodium silico fluoride in the Tirupati Metachems range.",
+      applications: ["Foundry applications"],
+      benefits: ["Sodium silico fluoride"]
+    },
+    {
+      id: "olivin", cat: "chemicals", name: "Olivin Powder",
+      lede: "Olivin powder in the Tirupati Metachems range.",
+      applications: ["Foundry applications"],
+      benefits: ["Olivin powder"]
     }
   ];
 
@@ -488,7 +613,7 @@
       e.preventDefault();
       if (!validForm()) return;
       var d = formSummary();
-      var email = form.getAttribute("data-email") || "sales@tirupatimetachems.in";
+      var email = form.getAttribute("data-email") || "tiruchems@live.in";
       var subject = encodeURIComponent("Enquiry from " + d.name + " — Tirupati Metachems");
       var body = encodeURIComponent(
         "Name: " + d.name + "\n" +
@@ -523,7 +648,24 @@
   }
 
   /* ---------------------------------------------------------------
-     12. FOOTER YEAR
+     12. DIRECT-TO-FORM ON CONTACT PAGE
+     Bring the enquiry form into view on load so visitors landing on
+     the contact page see the form without having to scroll.
+  --------------------------------------------------------------- */
+  var contactSection = document.getElementById("contact");
+  if (contactSection && window.location.pathname.indexOf("contact.html") !== -1) {
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        contactSection.scrollIntoView({
+          behavior: prefersReduced ? "auto" : "smooth",
+          block: "start"
+        });
+      }, 60);
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     13. FOOTER YEAR
   --------------------------------------------------------------- */
   var yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
